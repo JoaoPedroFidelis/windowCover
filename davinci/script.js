@@ -153,7 +153,7 @@ function createIcon(text){
     this.windowElement.appendChild(iconHolder);
 
     var icon = document.createElement('img');
-    icon.setAttribute('src', 'daVinci/icons/' + text);
+    icon.setAttribute('src', 'davinci/icons/' + text);
     iconHolder.appendChild(icon);
     return(iconHolder);
 }
