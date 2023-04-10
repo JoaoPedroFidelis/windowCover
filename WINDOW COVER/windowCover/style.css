@@ -1,0 +1,179 @@
+.windowcover-TextArea{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    max-width: 100vw;
+    max-height: 100vh;
+    box-sizing: border-box;
+    z-index: 999;
+    background: transparent;
+}
+.windowcover-fakeTextarea{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.windowcover-fakeTextarea .windowcover-awesomeImgHolder{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.windowcover-UIHolder{
+    position: absolute;
+    right: 10px;
+
+    max-width: 420px;
+    height: fit-content;
+    background-color: #00000083;
+    color: white;
+    backdrop-filter: blur(10px);
+    border-radius: 7px;
+    overflow: hidden;
+    padding: 0;
+    z-index: 1000;
+}
+
+.windowcover-Window{
+    background: linear-gradient(90deg, #6966ff 0%, #363cff70 100%);;
+    width: 100%;
+    height: 30px;
+    display: flex;
+}
+.windowcover-Window .windowcover-Icon:nth-child(1){
+    margin-right: auto;
+}
+
+.closed.windowcover-UIHolder{
+    max-width: fit-content!important;
+}
+.closed .windowcover-Window{
+    width: fit-content;
+    height: fit-content;
+}
+.closed .windowcover-Window > .windowcover-Icon{
+    display: none;
+}
+.closed .windowcover-Window .windowcover-Icon:nth-child(3){
+    display: flex;
+    padding: 12px 25px;
+}
+.windowcover-Window .windowcover-Icon{
+    height: 100%;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+}
+.windowcover-Window .windowcover-Icon.select:hover{
+    background-color: #0000002a;
+    cursor: pointer;
+}
+
+.windowcover-UI{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding: 15px;
+    padding-top: 10px;
+}
+.windowcover-UI > *{
+    font-family: monospace;
+}
+.windowcover-UI .windowcover-Section{
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    align-items: center;
+}
+.windowcover-UI .windowcover-Section > *{
+    display: flex;
+    gap: 5px;
+}
+.windowcover-UI .windowcover-Section.windowcover-SusSec{
+    flex-direction: column;
+    gap: 5px;
+}
+
+.windowcover-UI button{
+    background-color: #000000a1;
+    border: none;
+    border-radius: 5px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    color: white;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.windowcover-UI button.windowcover-MinBtn{
+    padding: 5px;
+    text-transform: lowercase;
+}
+.windowcover-UI button.windowcover-True{
+    background: linear-gradient(90deg, #6966ff 0%, #363cff70 100%);
+}
+
+.windowcover-UI label{
+    min-width: fit-content;
+    max-height: 15px;
+    align-self: center;
+}
+.windowcover-UI input:disabled{
+    background-color: #000000ab;
+    color: #ffffff44;
+}
+.windowcover-UI input{
+    box-sizing: border-box;
+    min-width: none;
+    width: 100%;
+    background-color: #00000083;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    color: white;
+}
+.windowcover-UI input:focus{
+    outline: none;
+}
+.windowcover-Input{
+    width: 100%;
+}
+
+@media(max-width: 440px){
+    .closed.windowcover-UIHolder{
+        left: unset;
+    }
+    .windowcover-UIHolder{
+        right: 10px;
+        left: 10px;
+    }
+    .windowcover-UI{
+        gap: 20px;
+    }
+    .windowcover-UI .windowcover-Section:is(#windowcover-SizeButtons, #windowcover-SizeInputs, #windowcover-PosInputs){
+        flex-direction: column;
+    }
+
+    .windowcover-UI .windowcover-Section#windowcover-PosInputs{
+        gap: 5px;
+    }
+}
