@@ -1,9 +1,11 @@
 // ------- Ao iniciar dar load em css e carregar configurações...
 document.head.innerHTML += '<link id="windowCoverStyles" rel="stylesheet" href="windowCover/style.css">'; // Lazy...?
+this.enabled = false;
 window.addEventListener("load", function(event) { load(); });
 
 // ------- Evento 'constructor'.
 function load() {
+    if(!this.enabled) return;
     this.body = document.body;
     this.body.style.margin = 0;
     this.prefix = 'windowcover-';
@@ -24,6 +26,8 @@ function load() {
     this.textarea.disabled = 'true';
 
     if(localStorage.getItem('textareaHeight')) this.textarea.style.height = localStorage.getItem('textareaHeight') + 'px';
+    else this.textarea.style.height = '100%';
+
     if(localStorage.getItem('textareaWidth')) this.textarea.style.width = localStorage.getItem('textareaWidth') + 'px';
     else this.textarea.style.width = '20px';
 
