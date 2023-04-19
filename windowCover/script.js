@@ -1,6 +1,6 @@
 // ------- Ao iniciar dar load em css e carregar configurações...
 document.head.innerHTML += '<link id="windowCoverStyles" rel="stylesheet" href="windowCover/style.css">'; // Lazy...?
-this.enabled = false;
+this.enabled = true;
 window.addEventListener("load", function(event) { load(); });
 
 // ------- Evento 'constructor'.
