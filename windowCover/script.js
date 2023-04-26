@@ -3,6 +3,16 @@ document.head.innerHTML += '<link id="windowCoverStyles" rel="stylesheet" href="
 this.enabled = true;
 window.addEventListener("load", function(event) { load(); });
 
+function disable(){
+    this.enabled = false;
+    if(this.textarea) this.textarea.remove();
+    if(this.uiHolder) this.uiHolder.remove();
+    return 'Disabled';
+}
+function enable(){
+    this.enabled = true;
+    load();
+}
 // ------- Evento 'constructor'.
 function load() {
     if(!this.enabled) return;
