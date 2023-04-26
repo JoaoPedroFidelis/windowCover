@@ -21,8 +21,8 @@
     max-height: 100vh;
     box-sizing: border-box;
     overflow: hidden;
-    margin: 0;
-    padding: 0;
+    margin: 0!important;
+    padding: 0!important;
     box-sizing: border-box;
 }
 .windowcover-fakeTextarea .windowcover-awesomeImgHolder{
@@ -31,29 +31,36 @@
 }
 
 
+.windowcover-UIHolder, .windowcover-UIHolder *{
+    font-family: monospace!important;
+    font-size: 12px!important;
+    color: white!important;
+    margin: 0!important;
+    padding: 0!important;
+}
 .windowcover-UIHolder{
     position: absolute;
     right: 10px;
 
-    max-width: 420px;
+    max-width: 420px!important;
+    width: 100%!important;;
     height: fit-content;
-    background-color: #00000083;
+    background-color: #00000083!important;
     color: white;
     backdrop-filter: blur(10px);
     border-radius: 7px;
     overflow: hidden;
-    padding: 0;
     z-index: 1000;
 }
 
 .windowcover-Window{
-    background: linear-gradient(90deg, #6966ff 0%, #363cff70 100%);;
-    width: 100%;
+    background: linear-gradient(90deg, #6966ff 0%, #363cff70 100%)!important;
+    width: 100%!important;
     height: 30px;
     display: flex;
 }
 .windowcover-Window .windowcover-Icon:nth-child(1){
-    margin-right: auto;
+    margin-right: auto!important;
 }
 
 .closed.windowcover-UIHolder{
@@ -68,29 +75,36 @@
 }
 .closed .windowcover-Window .windowcover-Icon:nth-child(3){
     display: flex;
-    padding: 12px 25px;
+    padding: 12px 25px!important;
 }
 .windowcover-Window .windowcover-Icon{
-    height: 100%;
-    width: 40px;
+    height: 100%!important;
+    width: 40px!important;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    border: none;
+    border: none;    
+}
+.windowcover-Window :is(.windowcover-Icon, .windowcover-Icon img){
+    background-color: none!important;
+    background: none!important;
+    transition: .3s background-color;
 }
 .windowcover-Window .windowcover-Icon.select:hover{
-    background-color: #0000002a;
+    background-color: #0000002a!important;
     cursor: pointer;
+    transition: .5s background-color;
 }
 
 .windowcover-UI{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 0;
-    padding: 15px;
-    padding-top: 10px;
+    padding: 15px!important;
+    padding-top: 10px!important;
+    background-color: none!important;
+    background: none!important;
 }
 .windowcover-UI > *{
     font-family: monospace;
@@ -100,6 +114,8 @@
     width: 100%;
     gap: 15px;
     align-items: center;
+    background-color: none!important;
+    background: none!important;
 }
 .windowcover-UI .windowcover-Section > *{
     display: flex;
@@ -115,7 +131,7 @@
     border: none;
     border-radius: 5px;
     text-transform: capitalize;
-    padding: 10px 20px;
+    padding: 10px 20px!important;
     color: white;
     width: 100%;
 
@@ -125,7 +141,7 @@
     cursor: pointer;
 }
 .windowcover-UI button.windowcover-MinBtn{
-    padding: 5px;
+    padding: 5px!important;
     text-transform: lowercase;
 }
 .windowcover-UI button.windowcover-True{
@@ -136,6 +152,8 @@
     min-width: fit-content;
     max-height: 15px;
     align-self: center;
+    background-color: none!important;
+    background: none!important;
 }
 .windowcover-UI input:disabled{
     background-color: #000000ab;
@@ -148,7 +166,7 @@
     background-color: #00000083;
     border: none;
     border-radius: 3px;
-    padding: 5px;
+    padding: 5px!important;
     color: white;
 }
 .windowcover-UI input:focus{
@@ -156,6 +174,8 @@
 }
 .windowcover-Input{
     width: 100%;
+    background-color: none!important;
+    background: none!important;
 }
 
 @media(max-width: 440px){
